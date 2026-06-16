@@ -10,19 +10,19 @@ import javax.persistence.Table;
 public class User {
     
     @Id
-    @Column(name = "id")
+    @Column(name = "Id")
     private String id;
     
-    @Column(name = "password")
+    @Column(name = "Password")
     private String password;
     
-    @Column(name = "fullname")
+    @Column(name = "Fullname")
     private String fullname;
     
-    @Column(name = "email")
+    @Column(name = "Email")
     private String email;
     
-    @Column(name = "admin")
+    @Column(name = "Admin")
     private Boolean admin = false;
 
     public User() {

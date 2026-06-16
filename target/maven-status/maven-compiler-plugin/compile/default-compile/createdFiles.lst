@@ -1,7 +1,0 @@
-com\example\Test\UserTest.class
-com\example\Entity\User.class
-com\example\App.class
-com\example\DAO\UserDAO.class
-com\example\Servlet\UserServlet.class
-com\example\Util\UserManager.class
-com\example\Util\JPAUtils.class

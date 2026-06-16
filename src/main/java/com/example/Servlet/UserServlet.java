@@ -18,7 +18,7 @@ import com.example.Entity.User;
     "/user/create", 
     "/user/update", 
     "/user/delete", 
-    "/user/reset"
+    "/user/reset",
 })
 public class UserServlet extends HttpServlet {
 

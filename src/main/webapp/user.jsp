@@ -13,6 +13,22 @@
     </style>
 </head>
 <body>
+     <div style="background-color: #f8f9fa; padding: 10px; text-align: right; border-bottom: 1px solid #ddd;">
+    <c:choose>
+        <c:when test="${empty sessionScope.user}">
+            <b>Welcome you</b> | 
+            <a href="${pageContext.request.contextPath}/sign-in.jsp">Đăng nhập</a>
+        </c:when>
+        <c:otherwise>
+            <b>Welcome ${sessionScope.user.fullname}</b> | 
+            <a href="${pageContext.request.contextPath}/account/sign-out">Đăng xuất</a>
+            
+            <c:if test="${sessionScope.user.admin}">
+                | <a href="${pageContext.request.contextPath}/admin/index.jsp">Quản trị</a>
+            </c:if>
+        </c:otherwise>
+    </c:choose>
+</div>
     <div class="container">
         <h2 class="mb-4 text-primary">QUẢN LÝ USER</h2>
 
@@ -24,6 +40,10 @@
                 <button class="nav-link ${not empty form.id ? 'active' : ''}" id="form-tab" data-bs-toggle="tab" data-bs-target="#form" type="button" role="tab">CẬP NHẬT</button>
             </li>
         </ul>
+
+<div style="padding: 15px;">
+    <h2>Visitors: ${applicationScope.visitors}</h2>
+</div>
 
         <div class="tab-content border border-top-0 p-4" id="myTabContent">
             
@@ -87,6 +107,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     
                     <div>
                         <button type="submit" formaction="${pageContext.request.contextPath}/user/create" class="btn btn-outline-primary">Create</button>
